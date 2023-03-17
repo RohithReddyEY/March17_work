@@ -1,0 +1,119 @@
+<nav>
+  <h1>Welcome to Products and Categories Management System</h1>  
+  </nav>  
+
+ <div> 
+  <!-- This form is for Adding a employee  with it's attributes with help of event binding-->   
+  <div class="container"> 
+    <h4>Adding a ProductAndCategory Form</h4> 
+  <form #ngForm="ngForm" (ngSubmit)="AddProducts()">   
+    <div class="form-group"> 
+      <label for="">ProductName</label> 
+      <input type="text" class="form-control" id="productname" placeholder="Enter ProductName" name="ProductName" [(ngModel)]="pro.ProductName">
+    </div>
+    <div class="form-group">
+      <label for="">ProductAmount</label>
+      <input type="number" class="form-control" id="ProductAmount" placeholder="Enter ProductAmount" name="ProductAmount" [(ngModel)]="pro.ProductAmount">
+    </div>
+    <div class="form-group"> 
+      <label for="">ProductReview</label>
+      <input type="text" class="form-control" id="ProductReview" placeholder="Enter ProductReview" name="ProductReview" [(ngModel)]="pro.ProductReview">
+    </div>
+    <div class="form-group"> 
+      <label for="">CategoryId</label>
+      <input type="number" class="form-control" id="CategoryId" placeholder="Enter CategoryId" name="CategoryId" [(ngModel)]="pro.CategoryId">
+    </div>
+    <div class="form-group"> 
+      <label for="">CategoryName</label>
+      <input type="text" class="form-control" id="CategoryName" placeholder="Enter CategoryName" name="CategoryName" [(ngModel)]="pro.CategoryName">
+    </div>
+    <div class="form-group"> 
+      <label for="">CategoryQuantity</label>
+      <input type="number" class="form-control" id="CategoryQuantity" placeholder="Enter CategoryQuantity" name="CategoryQuantity" [(ngModel)]="pro.CategoryQuantity">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button> 
+    <button type="reset" class="btn btn-danger">Reset</button> 
+  </form> 
+</div> 
+
+ <div class="container"> 
+  <!-- //creating a table for the employee with table headings and it's data-->   
+  <table class="table table-primary" border="1">   
+    <thead>
+      <tr>
+        <th scope="col">ProductId</th>
+        <th scope="col">ProductName</th>
+        <th scope="col">ProductAmount</th>
+        <th scope="col">ProductReview</th>
+        <th scope="col">CategoryId</th>
+        <th scope="col">CategoryName</th>
+        <th scope="col">CategoryQuantity</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Implementing Structural Directive like ngFor to get all the employee details --> 
+      <tr class="" *ngFor="let pdt of productList"> 
+        <td scope="row">{{pdt.id}}</td>
+        <td>{{pdt.ProductName}}</td>
+        <td>{{pdt.ProductAmount}}</td>
+        <td>{{pdt.ProductReview}}</td>
+        <td>{{pdt.CategoryId}}</td>
+        <td>{{pdt.CategoryName}}</td>
+        <td>{{pdt.CategoryQuantity}}</td>
+        <td> 
+          <!-- creating a button for edit and delete , for edit-implementing modal form  --> 
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" (click)="getdata(pdt)"><i class="fa-solid fa-pen-to-square"></i>Edit</button>
+          <button type="button" class="btn btn-danger" (click)="DeleteProduct(pdt.id)"><i class="fa-solid fa-trash"></i>Delete</button>   
+        </td>
+      </tr>
+    </tbody> 
+  </table> 
+ </div>
+
+<div class="modal fade" id="exampleModal" role="dialog" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" >Updating ProductAndCategory Details</h5>  
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"> 
+          <span aria-hidden="true">&times;</span> 
+        </button>
+      </div>
+      <div class="modal-body"> 
+        <form #ngForm="ngForm" (ngSubmit)="UpdateProducts()">  
+          <div class="form-group">
+            <label for="">ProductName</label> 
+      <input type="text" class="form-control" id="productname" placeholder="Enter ProductName" name="ProductName" [(ngModel)]="currentData.ProductName">
+    </div>
+    <div class="form-group">
+      <label for="">ProductAmount</label>
+      <input type="number" class="form-control" id="ProductAmount" placeholder="Enter ProductAmount" name="ProductAmount" [(ngModel)]="currentData.ProductAmount">
+    </div>
+    <div class="form-group"> 
+      <label for="">ProductReview</label>
+      <input type="text" class="form-control" id="ProductReview" placeholder="Enter ProductReview" name="ProductReview" [(ngModel)]="currentData.ProductReview">
+    </div>
+    <div class="form-group"> 
+      <label for="">CategoryId</label>
+      <input type="number" class="form-control" id="CategoryId" placeholder="Enter CategoryId" name="CategoryId" [(ngModel)]="currentData.CategoryId">
+    </div>
+    <div class="form-group"> 
+      <label for="">CategoryName</label>
+      <input type="text" class="form-control" id="CategoryName" placeholder="Enter CategoryName" name="CategoryName" [(ngModel)]="currentData.CategoryName">
+    </div>
+    <div class="form-group"> 
+      <label for="">CategoryQuantity</label>
+      <input type="number" class="form-control" id="CategoryQuantity" placeholder="Enter CategoryQuantity" name="CategoryQuantity" [(ngModel)]="currentData.CategoryQuantity">
+    </div>
+           <button type="submit"  class="btn btn-primary" >Save</button>     
+           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button> 
+    </form>    
+  </div>   
+    </div>
+  </div>
+</div> 
+</div> 
+ 
+ 
+ 

@@ -1,0 +1,78 @@
+/* Styles for the navigation bar */
+nav {
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  nav h1 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  /* Styles for the container */
+  .container {
+    margin: 20px;
+  }
+  
+  /* Styles for the form */
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  .form-control {
+    border-radius: 0;
+  }
+  
+  .btn-primary {
+    border-radius: 0;
+  }
+  
+  .btn-danger {
+    border-radius: 0;
+  }
+  
+  /* Styles for the table */
+  .table {
+    margin-top: 20px;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .table th,
+  .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  .table th {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  /* Styles for the modal */
+  .modal-header {
+    background-color: #333;
+    color: #fff;
+  }
+  
+  .modal-title {
+    font-size: 24px;
+  }
+  
+  .modal-body {
+    padding: 20px;
+  }
+  
+  .modal-footer {
+    justify-content: flex-start;
+    border-top: none;
+  }
+  
+  .fa-pen-to-square, .fa-trash {
+    margin-right: 5px;
+  }
+  
