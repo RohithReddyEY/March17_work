@@ -1,7 +1,7 @@
 Crud using MongoDb -> Completed
 Crud using SqlServer -> Completed
-Microservices-> in progress
-Security-> in progress
+Microservices-> Completed
+Security-> Completed
 CQRS ->Completed
 Angular -> Completed
 Moq framework ->NotCompleted
